@@ -1,15 +1,53 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <h1>Example title</h1>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmoteka</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="holder">
+
+    <div class="logo-holder">
+      
+      <svg class="icon icon-film" width="20" height="20">
+        <use href="/src/images/icons.svg#icon-film"></use> 
+      </svg>
+      <h2 class="filmo">Filmoteka</h2>
+     
+      <button class="home">HOME</button>
+      <button class="library">LIBRARY</button>
+    </div>
+
+
+<div class="form-div">
+   <form class="search-form" id="form" action="">
+    <input class="input-search-form" type="text" name="search" autocomplete="off" placeholder="Search..." id="search" />
+
+      <button class="search-btn" type="submit"><svg class="icon icon-film" width="18" height="18">
+          <use href="/src/images/icons.svg#icon-search"></use>
+        </svg></button>
+    </form>
+   </div>
+  </header>
+
+  <main id="main">
+
+    <div class="movie">
+      <img src="" alt="image">
+
+      <div class="movie-info">
+        <h5 class="movie-title">Movie Title</h5>
+        <h6 class="genre">action</h6>
+      </div>
+
+    </div>
+
+  </main>
+  <script src="js/script.js"></script>
+</body>
+
 </html>

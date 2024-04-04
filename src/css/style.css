@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: black;
+  --secondary-color: aqua;
+  --luminance-color: rgba(250, 251, 248, 0);
+}
+body {
+  background-color: var(--luminance-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.holder{
+  background-color: black;
+  padding-bottom: 100px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding: 1 rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+.logo-holder {
+   display: flex;
+   align-items: center;
+   justify-content: center; */
+}
+.icon-film use{
+    fill: gray;
+}
+.filmo {
+  color: aliceblue;
+  margin-right: 100%;
+}
+.home {
+  border: none;
+  color: aliceblue;
+  background-color: transparent;
+  margin-right: 20%;
+  margin-left: 100%;
+}
+
+.library {
+  border: none;
+  color: aliceblue;
+  background-color: transparent;
+}
+
+.search {
+  color: white;
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 336px;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid whitesmoke;
+}
+.input-search-form{
+  color: aliceblue;
+  font-size: 18px;
+   background-color: transparent;
+   width: 336px;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom: 1px solid white;
+   outline: none;
+   padding: 8px 10px 8px 10px;
+}
+.form-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 1px 1px 0 rgba(0, 0, 0, 0.14);
+}
+
+.search-btn {
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border-top: none;
+  border-left: none;
+}
+
+.search:focus {
+  outline: 0;
+  background-color: gray;
+}
+
+.search::placeholder {
+  color: whitesmoke;
+}
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.movie {
+
+  width: 274px;
+  height: 480px;
+  background-color: var(--luminance-color);
+
+}
+
+.movie img {
+  margin-bottom: -15px;
+  border-radius: 8px;
+  width: 274px;
+  height: 398px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-title {
+  color: black;
+  padding-bottom: -10px;
+
+}
+
+.genre {
+  color: black;
+  font-size: 12px;
+  margin-top: -50px;
+}
