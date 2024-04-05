@@ -14,16 +14,15 @@ getMovies(API_URL);
 
 function getMovies(url) {
 
-    fetch(url).then(res => res.json()).then(data => {
-         console.log(data.results)
-         showMovies(data.results);
+    fetch(url)
+    .then(res => res.json()).then(data => {
+         console.log(data.res)
+         showMovies(data.res);
     })
 }
 
 function showMovies(data) {
     main.innerHTML = '';
-    
-
 
     data.forEach(movie => {
         const { title, genre, poster_path,} = movie;
@@ -36,9 +35,7 @@ function showMovies(data) {
                 <h5>${title}</h5>
                 <h5>${genre}</h5>
                </div>
-    
         `
-
         main.appendChild(movieEl);
     })
 }
