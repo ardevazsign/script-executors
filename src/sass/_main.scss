@@ -1,79 +1,35 @@
-.holder{
-    background-color: black;
-    padding-bottom: 100px;
-    margin-bottom: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding: 1 rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-  }
-  .logo-holder {
-     display: flex;
-     align-items: center;
-     justify-content: center; 
-  }
-  .icon-film use{
-      fill: gray;
-  }
-  .filmo {
-    color: aliceblue;
-    margin-right: 100%;
-  }
-  .home {
-    border: none;
-    color: aliceblue;
-    background-color: transparent;
-    margin-right: 20%;
-    margin-left: 100%;
-  }
-  
-  .library {
-    border: none;
-    color: aliceblue;
-    background-color: transparent;
-  }
-  
-  
-  
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .movie {
-  
-    width: 274px;
-    height: 480px;
-    background-color: var(--luminance-color);
-  
-  }
-  
-  .movie img {
-    margin-bottom: -15px;
-    border-radius: 8px;
-    width: 274px;
-    height: 398px;
-  }
-  
-  .movie-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .movie-title {
-    color: black;
-    padding-bottom: -10px;
-  
-  }
-  
-  .genre {
-    color: black;
-    font-size: 12px;
-    margin-top: -50px;
-  }
+img{
+  display: block;
+  width: 280px;
+  height: 402px;
+  padding: 0 20px;
+  object-fit: cover;
+}
+
+.movie-section{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.movie-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  row-gap: 25px;
+}
+
+.movieCardDesc{
+  padding: 0 20px;
+}
+
+.movie-title{
+  font-size: 12px;;
+  line-height: 14.06px;
+}
+
+.movie-preview{
+  font-size: 12px;
+  line-height: 16px;
+  color: orange;
+}
