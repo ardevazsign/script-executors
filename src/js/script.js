@@ -49,6 +49,7 @@ form.addEventListener('submit', (e) => {
         getMovies(searchURL+'&query='+searchTerm) 
     }
 })*/
+
 import axios from "axios";
 import { Notify } from "notiflix/build/notiflix-notify-aio.js";
 import {BASE_URL,trending_path, trend_options, imageUrl, API_KEY} from "./filmoteka-api.js";
@@ -74,8 +75,8 @@ async function loadMovieList() {
     }
 }
 
-//create movie list
 
+//create movie list
 async function createMovie(results){
     // Fetch genre information
     const genreResponse = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
@@ -88,7 +89,6 @@ async function createMovie(results){
             id,
             title,
             original_title,
-            backdrop_path,
             poster_path,
             genre_ids,
             release_date,

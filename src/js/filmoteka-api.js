@@ -1,5 +1,5 @@
 export const BASE_URL="https://api.themoviedb.org/3";
-export const trending_path="/trending/movie/week";
+export const trending_path="/trending/movie/day";
 export const API_KEY ="acbe04d9b6826898170f4d9e0758e12a";
 
 //image URL
@@ -17,4 +17,3 @@ export const trend_options = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhY2JlMDRkOWI2ODI2ODk4MTcwZjRkOWUwNzU4ZTEyYSIsInN1YiI6IjY2MGQ2MjFiMTQ5NTY1MDE3ZGJjNmEzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PUDKOldzNDJJ4hr2JxeieU4DQWjQnz7YAo5HpnJeNNY'
       }
 }
-
