@@ -112,7 +112,7 @@ async function createMovie(results){
         </div>
         
         <!-- Trigger/Open The Modal -->
-<button id="myBtn" type="submit">Open Modal</button>
+<button id="myBtn">Open Modal</button>
 
         </div>
         `;
