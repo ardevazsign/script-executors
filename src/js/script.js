@@ -108,9 +108,12 @@ async function createMovie(results){
         <div class ="movieCardDesc">
             <h2 class="movie-title">${title}<h2/>
             <span class ="movie-preview">${movieGenres}|${year}</span>
+
+<button type="button" id="myBtn">Open Modal</button>
+
         </div>
         </div>
         `;
     }).join("");
 movieEl.insertAdjacentHTML('beforeend', movieMarkup);
-}
+};
