@@ -108,8 +108,12 @@ async function createMovie(results){
         <div class ="movieCardDesc">
             <h2 class="movie-title">${title}<h2/>
             <span class ="movie-preview">${movieGenres}|${year}</span>
+           
         </div>
-        <button type="button" id="myBtn">Open Modal</button>
+        
+        <!-- Trigger/Open The Modal -->
+<button id="myBtn" type="submit">Open Modal</button>
+
         </div>
         `;
     }).join("");
