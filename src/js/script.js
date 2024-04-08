@@ -121,13 +121,22 @@ movieCards.forEach(movieCard => {
         console.log('Clicked Movie ID:', movieId);
         // You can perform any action with the movieId here
         //add modal
-
         openModal(movieId);
+         });
     });
-});
 }
-
-function openModal(movieId){
-    alert(movieId);
+function openModal(movieId) {
+    // Fetch movie details using movieId
+    const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
+    axios.get(movieDetailsUrl)
+        .then(response => {
+            const movieDetails = response.data;
+            console.log(movieDetails);
+            //insert modal here
+        })
+        .catch(error => {
+            console.error('Error fetching movie details:', error);
+            Notify.failure('Error fetching movie details');
+        });
 }
 
