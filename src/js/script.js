@@ -103,18 +103,38 @@ async function createMovie(results){
         const year = new Date(release_date).getFullYear();
 
         return `
-        <div class ="movie-card">
+        <div class ="movie-card" data-toggle="modal" data-target="#myModal">
         <image src="${imageUrl+poster_path}" alt ="${original_title}"/>
         <div class ="movieCardDesc">
             <h2 class="movie-title">${title}<h2/>
             <span class ="movie-preview">${movieGenres}|${year}</span>
            
         </div>
-        
-        <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
         </div>
+
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                    <image src="${imageUrl+poster_path}" alt ="${original_title}"/>
+            <h2 class="movie-title">${title}<h2/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>    
+        </div>
+
         `;
     }).join("");
 movieEl.insertAdjacentHTML('beforeend', movieMarkup);
