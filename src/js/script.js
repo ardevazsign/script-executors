@@ -56,6 +56,7 @@ import {BASE_URL,trending_path, trend_options, imageUrl, API_KEY} from "./filmot
 
 window.addEventListener('load', loadMovieList);
 const movieEl = document.querySelector('.movie-list');
+const modalbody = document.querySelector('.modal');
 
 async function loadMovieList() {
     try {
@@ -77,65 +78,56 @@ async function loadMovieList() {
 
 
 //create movie list
-async function createMovie(results){
+async function createMovie(results) {
     // Fetch genre information
     const genreResponse = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
     const genreData = await genreResponse.json();
     const genres = genreData.genres;
 
-    let movieMarkup = 
-    results.map((
-        {
-            id,
-            title,
-            original_title,
-            poster_path,
-            genre_ids,
-            release_date,
-        }
-    )=> {
-        // Map genre_ids to genre names
-        const movieGenres = genre_ids.slice(0, 2).map(genreId => {
-            const genre = genres.find(genre => genre.id === genreId);
-            return genre ? genre.name : 'Unknown';
-        }).join(', ');
-        //Movie year
-        const year = new Date(release_date).getFullYear();
+    let movieMarkup =
+        results.map((
+            {
+                id,
+                title,
+                original_title,
+                poster_path,
+                genre_ids,
+                release_date,
+            }
+        ) => {
+            // Map genre_ids to genre names
+            const movieGenres = genre_ids.slice(0, 2).map(genreId => {
+                const genre = genres.find(genre => genre.id === genreId);
+                return genre ? genre.name : 'Unknown';
+            }).join(', ');
+            //Movie year
+            const year = new Date(release_date).getFullYear();
 
-        return `
-        <div class ="movie-card" data-toggle="modal" data-target="#myModal">
-        <image src="${imageUrl+poster_path}" alt ="${original_title}"/>
-        <div class ="movieCardDesc">
-            <h2 class="movie-title">${title}<h2/>
-            <span class ="movie-preview">${movieGenres}|${year}</span>
-           
-        </div>
-        </div>
-
-        <div class="container">
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                    <image src="${imageUrl+poster_path}" alt ="${original_title}"/>
-            <h2 class="movie-title">${title}<h2/>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-                </div>
+            return `
+            <div class ="movie-card" data-id="${id}" data-toggle="modal" data-target="#myModal">
+            <image src="${imageUrl + poster_path}" alt ="${original_title}"/>
+            <div class ="movieCardDesc">
+                <h2 class="movie-title">${title}<h2/>
+                <span class ="movie-preview">${movieGenres}|${year}</span>
+            </div> 
             </div>
-            </div>    
-        </div>
+            `;
+        }).join("");
+        movieEl.insertAdjacentHTML('beforeend', movieMarkup);
+        
+        
+        // Add click event listener to every movie card
+        const movieCards = document.querySelectorAll('.movie-card');
+    
+        movieCards.forEach(movieCard => {
+            movieCard.addEventListener('click', () => {
+                // Retrieve the value of data-id attribute of the clicked movie card
+                const movieId = movieCard.dataset.id;
+                console.log('Clicked Movie ID:', movieId);
+                // You can perform any action with the movieId here
+                //add modal
 
-        `;
-    }).join("");
-movieEl.insertAdjacentHTML('beforeend', movieMarkup);
-};
+            });
+        });
+    
+}
