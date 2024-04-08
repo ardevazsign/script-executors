@@ -126,8 +126,33 @@ async function createMovie(results) {
                 console.log('Clicked Movie ID:', movieId);
                 // You can perform any action with the movieId here
                 //add modal
-
+                openModal(movieId);
             });
         });
-    
+}
+
+function openModal(movieId) {
+    // Fetch movie details using movieId
+    const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
+    const modalBody = document.getElementById("modal-body-id");
+    axios.get(movieDetailsUrl)
+        .then(response => {
+            const movieDetails = response.data;
+            console.log(movieDetails);
+            //insert modal here
+            const div = document.createElement("div");
+            div.innerHTML = `
+                <image src="${imageUrl + movieDetails.poster_path}" alt ="${movieDetails.original_title}"/>
+                <p>${movieDetails.id}</p>
+                <p>${movieDetails.overview}</p>
+                <p>vote count: ${movieDetails.vote_count}</p>
+                <p>vote average: ${movieDetails.vote_average}</p>
+                <p>title: ${movieDetails.original_title}</p>
+            `;  
+			modalBody.appendChild(div);
+        })
+        .catch(error => {
+            console.error('Error fetching movie details:', error);
+            Notify.failure('Error fetching movie details');
+        });
 }
