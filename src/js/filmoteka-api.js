@@ -2,6 +2,8 @@ export const BASE_URL="https://api.themoviedb.org/3";
 export const trending_path="/trending/movie/day";
 export const API_KEY ="acbe04d9b6826898170f4d9e0758e12a";
 
+export const pathMovieDetails ="https://api.themoviedb.org/3/movie/";
+
 //image URL
 export const imageUrl = "https://image.tmdb.org/t/p/w500";
 

@@ -22,7 +22,8 @@
     "get-google-fonts": "^1.2.2",
     "modal": "^1.2.0",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.7"
+    "notiflix": "^3.2.7",
+    "tui-pagination": "^3.4.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

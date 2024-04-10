@@ -65,7 +65,6 @@ async function loadMovieList() {
         const res = await axios.get(path, trend_options);
         console.log(res.data);
 
-
         // Destructure movieList from the response data
         const { results } = res.data;
         // Call createMovie function with movieList as argument
@@ -76,7 +75,6 @@ async function loadMovieList() {
     }
 }
 
-
 //create movie list
 async function createMovie(results) {
     // Fetch genre information
@@ -84,7 +82,8 @@ async function createMovie(results) {
     const genreData = await genreResponse.json();
     const genres = genreData.genres;
 
-    let movieMarkup =
+
+        let movieMarkup = 
         results.map((
             {
                 id,
@@ -94,7 +93,8 @@ async function createMovie(results) {
                 genre_ids,
                 release_date,
             }
-        ) => {
+        )=> {
+
             // Map genre_ids to genre names
             const movieGenres = genre_ids.slice(0, 2).map(genreId => {
                 const genre = genres.find(genre => genre.id === genreId);
@@ -102,7 +102,6 @@ async function createMovie(results) {
             }).join(', ');
             //Movie year
             const year = new Date(release_date).getFullYear();
-
             return `
             <div class ="movie-card" data-id="${id}" data-toggle="modal" data-target="#myModal">
             <image src="${imageUrl + poster_path}" alt ="${original_title}"/>
@@ -131,10 +130,10 @@ async function createMovie(results) {
         });
 }
 
+
 function openModal(movieId) {
     // Fetch movie details using movieId
     const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
-    const modalBody = document.getElementById("modal-body-id");
     axios.get(movieDetailsUrl)
         .then(response => {
             const movieDetails = response.data;
@@ -150,9 +149,11 @@ function openModal(movieId) {
                 <p>title: ${movieDetails.original_title}</p>
             `;  
 			modalBody.appendChild(div);
+
         })
         .catch(error => {
             console.error('Error fetching movie details:', error);
             Notify.failure('Error fetching movie details');
         });
 }
+
