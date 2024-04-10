@@ -1,6 +1,9 @@
 @import './common';
-@import './header';
+@import './header-home';
+@import './header-library';
 @import './main';
+@import './modal';
+@import './pagination';
 
 * {
     box-sizing: border-box;

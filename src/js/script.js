@@ -56,6 +56,7 @@ import {BASE_URL,trending_path, trend_options, imageUrl, API_KEY} from "./filmot
 
 window.addEventListener('load', loadMovieList);
 const movieEl = document.querySelector('.movie-list');
+const modalbody = document.querySelector('.modal');
 
 async function loadMovieList() {
     try {
@@ -75,15 +76,11 @@ async function loadMovieList() {
 }
 
 //create movie list
-async function createMovie(results){
+async function createMovie(results) {
     // Fetch genre information
     const genreResponse = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
     const genreData = await genreResponse.json();
     const genres = genreData.genres;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         let movieMarkup = 
         results.map((
             {
@@ -95,6 +92,7 @@ async function createMovie(results){
                 release_date,
             }
         )=> {
+
             // Map genre_ids to genre names
             const movieGenres = genre_ids.slice(0, 2).map(genreId => {
                 const genre = genres.find(genre => genre.id === genreId);
@@ -102,32 +100,34 @@ async function createMovie(results){
             }).join(', ');
             //Movie year
             const year = new Date(release_date).getFullYear();
-
             return `
-            <div class ="movie-card" data-id="${id}">
-            <image src="${imageUrl+poster_path}" alt ="${original_title}"/>
+            <div class ="movie-card" data-id="${id}" data-toggle="modal" data-target="#myModal">
+            <image src="${imageUrl + poster_path}" alt ="${original_title}"/>
             <div class ="movieCardDesc">
                 <h2 class="movie-title">${title}<h2/>
                 <span class ="movie-preview">${movieGenres}|${year}</span>
-            </div>
+            </div> 
             </div>
             `;
         }).join("");
-    movieEl.insertAdjacentHTML('beforeend', movieMarkup);
-
-    // Add click event listener to every movie card
-const movieCards = document.querySelectorAll('.movie-card');
-movieCards.forEach(movieCard => {
-    movieCard.addEventListener('click', () => {
-        // Retrieve the value of data-id attribute of the clicked movie card
-        const movieId = movieCard.dataset.id;
-        console.log('Clicked Movie ID:', movieId);
-        // You can perform any action with the movieId here
-        //add modal
-        openModal(movieId);
-         });
-    });
+        movieEl.insertAdjacentHTML('beforeend', movieMarkup);
+        
+        
+        // Add click event listener to every movie card
+        const movieCards = document.querySelectorAll('.movie-card');
+    
+        movieCards.forEach(movieCard => {
+            movieCard.addEventListener('click', () => {
+                // Retrieve the value of data-id attribute of the clicked movie card
+                const movieId = movieCard.dataset.id;
+                console.log('Clicked Movie ID:', movieId);
+                // You can perform any action with the movieId here
+                //add modal
+                openModal(movieId);
+            });
+        });
 }
+
 function openModal(movieId) {
     // Fetch movie details using movieId
     const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
@@ -136,8 +136,7 @@ function openModal(movieId) {
             const movieDetails = response.data;
             console.log(movieDetails);
             //insert modal here
-<<<<<<< Updated upstream
-=======
+
             const div = document.createElement("div");
             div.innerHTML = `
                 <image src="${imageUrl + movieDetails.poster_path}" alt ="${movieDetails.original_title}"/>
@@ -148,14 +147,13 @@ function openModal(movieId) {
                 <p>title: ${movieDetails.original_title}</p>
             `;  
             const modalBody = document.querySelector('.modal-body');
-			modalBody.appendChild(div);
+			      modalBody.appendChild(div);
 
             // Add event listener to clear modal body when modal is closed
             $('#myModal').on('hidden.bs.modal', function (e) {
                 clearModalBody();
             });
 
->>>>>>> Stashed changes
         })
         .catch(error => {
             console.error('Error fetching movie details:', error);
