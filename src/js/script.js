@@ -80,7 +80,10 @@ async function createMovie(results){
     const genreResponse = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
     const genreData = await genreResponse.json();
     const genres = genreData.genres;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         let movieMarkup = 
         results.map((
             {
@@ -133,10 +136,35 @@ function openModal(movieId) {
             const movieDetails = response.data;
             console.log(movieDetails);
             //insert modal here
+<<<<<<< Updated upstream
+=======
+            const div = document.createElement("div");
+            div.innerHTML = `
+                <image src="${imageUrl + movieDetails.poster_path}" alt ="${movieDetails.original_title}"/>
+                <p>${movieDetails.id}</p>
+                <p>${movieDetails.overview}</p>
+                <p>vote count: ${movieDetails.vote_count}</p>
+                <p>vote average: ${movieDetails.vote_average}</p>
+                <p>title: ${movieDetails.original_title}</p>
+            `;  
+            const modalBody = document.querySelector('.modal-body');
+			modalBody.appendChild(div);
+
+            // Add event listener to clear modal body when modal is closed
+            $('#myModal').on('hidden.bs.modal', function (e) {
+                clearModalBody();
+            });
+
+>>>>>>> Stashed changes
         })
         .catch(error => {
             console.error('Error fetching movie details:', error);
             Notify.failure('Error fetching movie details');
         });
+}
+function clearModalBody() {
+    const modalBody = document.querySelector('.modal-body');
+    // Clear the contents of the modal body
+    modalBody.innerHTML = '';
 }
 
