@@ -139,12 +139,50 @@ function openModal(movieId) {
 
             const div = document.createElement("div");
             div.innerHTML = `
-                <image src="${imageUrl + movieDetails.poster_path}" alt ="${movieDetails.original_title}"/>
-                <p>${movieDetails.id}</p>
-                <p>${movieDetails.overview}</p>
-                <p>vote count: ${movieDetails.vote_count}</p>
-                <p>vote average: ${movieDetails.vote_average}</p>
-                <p>title: ${movieDetails.original_title}</p>
+                <div class="movie-box">
+                    <div class="div-img">
+                    <image src="${imageUrl + movieDetails.poster_path}" alt ="${movieDetails.original_title}"/>
+                    </div>
+                    <div class="movie-details">
+                        <h1>${movieDetails.original_title}</h1>
+                        <div class="list">
+                            <ul class="list-title">
+                                <li>
+                                    <p>vote&nbsp;&#47;&nbsp;votes</p>
+                                </li>
+                                <li>
+                                    <p>popularity</p>
+                                </li>
+                                <li>
+                                    <p>original title</p>
+                                </li>
+                                <li>
+                                    <p>genre</p>
+                                </li>
+                            </ul>
+
+                            <ul class="list-disc">
+                                <li>
+                                    <p>${movieDetails.vote_average}&nbsp;&#47;&nbsp;${movieDetails.vote_count}</p>
+                                </li>
+                                <li>
+                                    <p>${movieDetails.popularity}</p>
+                                </li>
+                                <li>
+                                    <p>${movieDetails.original_title}</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h4>about</h4>
+                        <p>${movieDetails.overview}</p>
+
+                        <div>
+                        <button type="submit" class="btn-addwatch btn-add">add to watch</button>
+                        <button type="submit" class="btn-addqeue btn-add">add to qeue</button>
+                        </div>
+                    </div>
+                </div>
             `;  
             const modalBody = document.querySelector('.modal-body');
 			      modalBody.appendChild(div);

@@ -24,11 +24,14 @@
 .modal-dialog {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    position: absolute;
 }
 
 .modal-content {
     background-color: #fefefe;
+    border-radius: 5px;
+    margin: 5%;
     /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -49,4 +52,43 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+// movie box
+.movie-box {
+    display: flex;
+}
+
+// movie button
+.btn-add {
+    height: 44px;
+    text-wrap: wrap;
+    border-radius: 5px;
+    border-style: solid;
+    text-transform: uppercase;
+}
+.btn-add:hover {
+    background-color: #FF6B01;
+    border-color: #FF6B01;
+}
+
+// movie details
+.movie-details h1, h4 {
+    text-transform: uppercase;
+}
+
+// image
+.div-img img {
+    border-radius: 5px;
+}
+
+// list
+.list {
+    display: flex;
+}
+
+.list-title,
+.list-disc {
+    list-style: none;
+    text-transform: capitalize;
 }
