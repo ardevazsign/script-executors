@@ -1,22 +1,40 @@
 @import './common';
+@import './loader';
+@import './variable.scss';
+
 @import './header-home';
 @import './header-library';
-@import './main';
-@import './pagination';
-@import './footer';
 
-* {
-    box-sizing: border-box;
-  }
-  :root {
-    --primary-color: black;
-    --secondary-color: aqua;
-    --luminance-color: rgba(250, 251, 248, 0);
-  }
-  body {
-    background-color: var(--luminance-color);
-    font-family: Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+@import './movieModal';
+@import './galleryMovie';
+@import './gallery';
+@import './pagination';
+
+@import './returnToTop.scss';
+@import './footer';
+@import './backdrop';
+@import './libraryEmpty';
+
+
+// @import './main';
+
+
+
+
+
+
+// * {
+//     box-sizing: border-box;
+//   }
+//   :root {
+//     --primary-color: black;
+//     --secondary-color: aqua;
+//     --luminance-color: rgba(250, 251, 248, 0);
+//   }
+//   body {
+//     background-color: var(--luminance-color);
+//     font-family: Roboto, sans-serif;
+//     margin: 0;
+//     padding: 0;
+//   }
   

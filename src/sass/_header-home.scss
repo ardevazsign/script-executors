@@ -26,7 +26,6 @@ body {
     0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 1px 1px 0 rgba(0, 0, 0, 0.14);
 }
-
 .nav-logo-list {
   display: flex;
   justify-content: center;
@@ -88,6 +87,7 @@ body {
   border-right: none;
   border-bottom: 3px solid var(--secondary-color);
   margin-bottom: 20px;
+  margin-top: 20px;
   padding: 8px 10px 8px 10px;
   outline: none;
 }
@@ -110,11 +110,37 @@ body {
   left: -8%;
 }
 
-.respons-message {
+.header-message {
   display: none;
   text-align: center;
   color: red;
 }
+
+
+@media screen and (min-width: 330px) {
+  .filmo{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // /* main */
 // main {
