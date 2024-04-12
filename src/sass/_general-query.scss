@@ -2,6 +2,27 @@
 
 
 // tablet view
+// @media (min-width: 768px) and (max-width: 900px){
 
+// }
 
 // mobile view
+@media (min-width: 320px) and (max-width: 767px){
+
+// movie mobile view
+    .movie-box {
+        display: block;
+    }
+
+    .movie-details {
+        padding: 0px;
+    }
+
+    .movie-details p {
+        text-align: justify;
+    }
+
+    .btn-add {
+        text-wrap: wrap;
+    }
+}
