@@ -1,7 +1,7 @@
 img{
   display: block;
-  width: 280px;
-  height: 402px;
+  width: 350px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -15,7 +15,7 @@ img{
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  row-gap: 25px;
+  row-gap: 30px;
 }
 
 .movieCardDesc{
@@ -39,6 +39,5 @@ img{
 
 .movie-preview{
   font-size: 12px;
-  line-height: 16px;
   color: orange;
 }
