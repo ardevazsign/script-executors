@@ -204,4 +204,3 @@ function clearModalBody() {
     // Clear the contents of the modal body
     modalBody.innerHTML = '';
 }
-
