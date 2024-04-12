@@ -26,6 +26,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
+    padding: 0;
+    margin: 0;
 }
 
 .modal-content {
@@ -54,9 +56,30 @@
     cursor: pointer;
 }
 
-// movie box
-.movie-box {
+//general
+.movie-box,
+.list {
     display: flex;
+}
+.movie-details {
+    padding-left: 20px;
+    text-wrap: wrap;
+}
+
+.movie-details h1,
+h4,
+.btn-add {
+    text-transform: uppercase;
+}
+
+.movie-details h1,h4,p,
+.list-title,
+.list-disc {
+    margin: 0;
+    margin-bottom: 20px;
+}
+.list-title {
+    padding: 0;
 }
 
 // movie button
@@ -64,17 +87,14 @@
     height: 44px;
     text-wrap: wrap;
     border-radius: 5px;
-    border-style: solid;
-    text-transform: uppercase;
+    border: solid 1px;
+    margin: 0px 20px 0px 0px;
 }
 .btn-add:hover {
-    background-color: #FF6B01;
-    border-color: #FF6B01;
-}
-
-// movie details
-.movie-details h1, h4 {
-    text-transform: uppercase;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    color: var(--text-white);
+    cursor: pointer;
 }
 
 // image
@@ -83,12 +103,18 @@
 }
 
 // list
-.list {
-    display: flex;
-}
-
 .list-title,
 .list-disc {
     list-style: none;
     text-transform: capitalize;
+}
+
+.list-disc li p span {
+    background: var(--button-color);
+    border: solid 0px var(--button-color);
+    border-radius: 5px;
+}
+
+.list-title {
+    color: var(--modal-text-color);
 }

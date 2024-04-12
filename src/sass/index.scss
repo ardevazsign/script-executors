@@ -1,3 +1,4 @@
+// default view
 @import './common';
 @import './header-home';
 @import './header-library';
@@ -5,13 +6,19 @@
 @import './modal';
 @import './pagination';
 
+// media query
+@import './general-query';
+
 * {
     box-sizing: border-box;
   }
   :root {
+    --text-white: #FFFFFF;
     --primary-color: black;
     --secondary-color: aqua;
     --luminance-color: rgba(250, 251, 248, 0);
+    --button-color: #FF6B01;
+    --modal-text-color:#8C8C8C;;
   }
   body {
     background-color: var(--luminance-color);

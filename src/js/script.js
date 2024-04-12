@@ -136,7 +136,8 @@ function openModal(movieId) {
             const movieDetails = response.data;
             console.log(movieDetails);
             //insert modal here
-
+            const rating = movieDetails.vote_average;
+            const ratings = rating.toFixed(2);
             const div = document.createElement("div");
             div.innerHTML = `
                 <div class="movie-box">
@@ -163,7 +164,7 @@ function openModal(movieId) {
 
                             <ul class="list-disc">
                                 <li>
-                                    <p>${movieDetails.vote_average}&nbsp;&#47;&nbsp;${movieDetails.vote_count}</p>
+                                    <p><span class="vote-text">${ratings}</span>&nbsp;&#47;&nbsp;${movieDetails.vote_count}</p>
                                 </li>
                                 <li>
                                     <p>${movieDetails.popularity}</p>
@@ -177,7 +178,7 @@ function openModal(movieId) {
                         <h4>about</h4>
                         <p>${movieDetails.overview}</p>
 
-                        <div>
+                        <div class=""btn-con>
                         <button type="submit" class="btn-addwatch btn-add">add to watch</button>
                         <button type="submit" class="btn-addqeue btn-add">add to qeue</button>
                         </div>
