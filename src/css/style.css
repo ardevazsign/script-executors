@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+  --primary-color: black;
+  --secondary-color: aqua;
+  --luminance-color: rgba(250, 251, 248, 0);
+}
+body {
+  background-color: var(--luminance-color);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* header-home */
+.holder{
+  background: url('/src/images/header-image/pexels-pavel-danilyuk-7234214.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2),
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 1px 0 rgba(0, 0, 0, 0.14);
+}
+.nav-logo-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50%;
+}
+.logo-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.icon-film use{
+  fill: white;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2),
+              0 1px 3px 0 rgba(0, 0, 0, 0.12),
+              0 1px 1px 0 rgba(0, 0, 0, 0.14);
+}
+.filmo {
+  font-size: 42px;
+  color: aliceblue;
+  text-shadow:  1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+.active::after {
+  background-color: red;
+  content: " ";
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 2px;
+  position: relative;
+  top: 1px;
+}
+
+.header-ul{
+  display: flex ;
+  gap: 30px;
+}
+ .list-item a{
+     font-family:'Roboto', sans-serif;
+     text-decoration: none;
+     font-weight: 700;
+     font-size: 16px;
+     color: aliceblue;
+}
+.input-search-form{
+  color: aliceblue;
+  font-size: 18px;
+   background-color: transparent;
+   width: 336px;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom: 3px solid aliceblue;
+   margin-bottom: 30px;
+   padding: 8px 10px 8px 10px;
+   outline: none;
+}
+::placeholder{
+  color: aliceblue;
+}
+  .form-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }  
+.search-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  position: relative;
+  left: -8%;
+}
+
+.respons-message{
+  display: none;
+  text-align: center;
+  color: red;
+}
+
+/* main */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.movie {
+  width: 300px;
+  height: 450px;
+  background-color: var(--luminance-color);
+}
+.movie img {
+  margin-bottom: -15px;
+  border-radius: 8px;
+  width: 280px;
+  height: 400px;
+}
+
+
+/* ============================================== */
+/* Library */
+

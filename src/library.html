@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,5 +23,64 @@
 
 
   <script type="module" src="./library.js"></script>
+=======
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  
+  <link rel="stylesheet" href="sass/index.scss">
+
+  <!-- include -->
+
+</head>
+<body>
+
+  <header class="library-header">
+    <div class="nav-container container">
+
+      <nav class="nav-logo-list">
+        <div class="logo-holder">
+          <svg class="icon icon-film" width="32" height="32">
+            <use href="/src/images/icons.svg#icon-film"></use>
+          </svg>
+          <h1 class="filmo">Filmoteka</h1>
+        </div>
+        <ul class="header-ul">
+          <li class="list-item "><a href="index.html">HOME</a></li>
+          <li class="list-item active"><a href="library.html">LIBRARY</a></li>
+        </ul>
+      </nav>
+    
+
+      <div class="btn-container">
+        <button type="button" class="watched-btn">WATCHED</button>
+        <button type="button" class="btn-queue">QUEUE</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!--  header -->
+
+ <main class="container" id="library">
+  <!-- include -->
+  <!--1 loader.hhtml-->
+<ul class="library-list"></ul>
+  <!--2 gallery-->
+  <!--3 pagination-->
+  <!--4 film modal-->
+  <!--5 modal-team-->
+
+ </main>
+
+ <!-- include back to top -->
+
+ <include src="./partials/footer.html"></include>
+
+
+ <script type="module" src="library.js"></script>
+>>>>>>> Stashed changes
 </body>
 </html>
