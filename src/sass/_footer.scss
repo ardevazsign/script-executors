@@ -12,13 +12,13 @@
   justify-content: center;
   margin-top: auto;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 770px) {
     display: block;
   }
 }
 
 .footer__container {
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 770px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@
 
 .footer__first-element {
   margin-bottom: 10px;
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 770px) {
     display: flex;
     margin-bottom: 0px;
   }
